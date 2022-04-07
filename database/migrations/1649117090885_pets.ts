@@ -5,14 +5,15 @@ export default class Pets extends BaseSchema {
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
-      table.string('name')
+      table.increments('id');
+      table.string('name');
+      table.string('color');
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
-      table.timestamp('created_at', { useTz: true })
-      table.timestamp('updated_at', { useTz: true })
+      table.timestamp('created_at', { useTz: true });
+      table.timestamp('updated_at', { useTz: true });
     })
   }
 
